@@ -30,7 +30,7 @@ function App() {
     <Container>
       <Row className="justify-content-md-center">
         <Col md={6}>
-          <h1>IA VISION RECONIZE</h1>
+          <h1>IA VISION RECOGNIZE</h1>
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>URL da Imagem ou Prompt</Form.Label>
