@@ -19,6 +19,16 @@ jobs:
         with:
           submodules: true
           lfs: false
+        # Adicione estas etapas para instalar as dependências do npm
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Especifique a versão do Node.js que você está usando
+      - name: Clear npm cache
+        run: npm cache clean --force
+      - name: Install dependencies
+        run: npm install
+      # Continuação do seu workflow...    
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
