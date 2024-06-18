@@ -3,3 +3,21 @@
 [Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview) allows you to easily build [React](https://reactjs.org/) apps in minutes. Use this repo with the [React quickstart](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=react) to build and customize a new static site.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+rm -rf node_modules package-lock.json
+
+
+npm install ajv
+
+npm cache clean --force
+npm install
+
+npm run build
+
+
+npm install -g serve
+serve -s build
+
+npm start
+
+npm start http://localhost:3000
