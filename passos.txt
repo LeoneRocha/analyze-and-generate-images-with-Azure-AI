@@ -1,0 +1,22 @@
+
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+
+----------- PASSO 1
+ Em um projeto react gerar o codigo do app.js usando boostrap para serguir o seguinte cenario 
+
+Um título
+Uma caixa de texto para inserir a URL da imagem a ser analisada ou o prompt da imagem a ser gerada
+Um botão para acionar a análise da imagem e outro para acionar a geração da imagem 
+
+----------- PASSO 2
+
+ Em um projeto react typescript  gere um código  usando padroes de projeto e boas praticas  para chamar a API do serviço Azure AI Vision Image Analysis 4.0 ao seu aplicativo React como uma função 'analyzeImage' em um novo módulo separado, que você pode nomear 'azure-image-analysis.js'. Observe que você pode personalizar os recursos visuais a serem retornados pela API, incorporando-os no parâmetro de consulta 'features'. A função deve receber como entrada a URL da imagem e retornar a resposta JSON da API.
+
+E agora gere codigo ou passo para que possa Adicionar 'analyzeImage' como um novo módulo ao seu App.js e chame a função 'analyzeImage' a partir daí, de forma que a ação de análise de imagem seja acionada quando o botão 'Analyze' for pressionado.
+
+Criar uma forma de Certificar que a interface do usuário possa ter um indicador de processamento enquanto a análise está em execução.
+
+E agora  no arquivo App.js, adicionando  uma função 'DisplayResults' para exibir os resultados da chamada de API em um formato legível, juntamente com a URL da imagem processada.
+
+
+https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png

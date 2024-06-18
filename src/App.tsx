@@ -1,30 +1,36 @@
-/**
- Em um projeto react gerar o codigo do app.js usando boostrap para serguir o seguinte cenario 
-
-Um título
-Uma caixa de texto para inserir a URL da imagem a ser analisada ou o prompt da imagem a ser gerada
-Um botão para acionar a análise da imagem e outro para acionar a geração da imagem 
-*/ 
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { analyzeImage } from './services/iaimageanalysisserices';
+import { AnalyzeImageResponse } from './types/AnalyzeImageResponse';
+import DisplayResults from './components/DisplayResults';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+  const [analysisResult, setAnalysisResult] = useState<AnalyzeImageResponse>();
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setInputValue(e.target.value);
+    setImageUrl(e.target.value); // Atualize a URL da imagem quando o input mudar
   };
 
-  const handleAnalyzeImage = () => {
-    // Função para analisar a imagem
+  const handleAnalyzeImage = async () => {
     console.log('Analisando imagem:', inputValue);
+    try {
+      const features = ['Description', 'Tags']; // Personalize conforme necessário
+      const result = await analyzeImage(inputValue, features);
+      setAnalysisResult(result);
+      console.log('Analisada imagem:', result);
+    } catch (error) {
+      console.error('Failed to analyze image:', error);
+    }
   };
 
   const handleGenerateImage = () => {
     // Função para gerar a imagem
     console.log('Gerando imagem para o prompt:', inputValue);
-  };
+  }; 
 
   return (
     <Container>
@@ -44,15 +50,16 @@ function App() {
             <Button variant="primary" onClick={handleAnalyzeImage}>
               Analisar Imagem
             </Button>{' '}
+            {/* Remova o botão Gerar Imagem se não for necessário */}
             <Button variant="secondary" onClick={handleGenerateImage}>
               Gerar Imagem
             </Button>
           </Form>
+          {/* Adicione o componente DisplayResults aqui */}
+          <DisplayResults imageUrl={imageUrl} results={analysisResult} />
         </Col>
       </Row>
     </Container>
   );
-}
-
+} 
 export default App;
-
