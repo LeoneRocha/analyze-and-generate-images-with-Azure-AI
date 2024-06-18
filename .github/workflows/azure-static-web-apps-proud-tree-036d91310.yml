@@ -27,7 +27,7 @@ jobs:
       - name: Clear npm cache
         run: npm cache clean --force
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       # Continuação do seu workflow...    
       - name: Build And Deploy
         id: builddeploy
