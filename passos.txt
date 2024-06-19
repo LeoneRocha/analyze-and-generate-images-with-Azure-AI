@@ -20,3 +20,10 @@ E agora  no arquivo App.js, adicionando  uma função 'DisplayResults' para exib
 
 
 https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png
+
+-------------
+Em react Typescritp ajuste o codigo abaixo para que seja possivel informar uma url de imagem para o servico de cognitive services  Azure AI Vision Image Analysis 
+
+ A função deve receber como entrada a URL da imagem e retornar a resposta JSON da API
+
+Segue codigo 
