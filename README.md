@@ -60,3 +60,15 @@ npm install webpack
 npm install webpack webpack-cli webpack-dev-server
 
 npm install typescript @types/node @types/react @types/react-dom @types/jest  
+------------------ TYPE SCRIPT
+
+cd meu-projeto
+npm install typescript
+
+npm install react-bootstrap
+
+
+
+  run: npm cache clean --force
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
