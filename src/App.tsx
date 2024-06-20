@@ -35,33 +35,27 @@ function App() {
     console.log('Gerando imagem para o prompt:', inputValue);
   };  
   return (
-    <Container>
-      <Row className="justify-content-md-center">
-        <Col md={6}>
-          <h1>IA VISION RECOGNIZE</h1>          
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>URL da Imagem ou Prompt</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Insira a URL ou o prompt da imagem"
-                value={inputValue}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-            <Button variant="primary" onClick={handleAnalyzeImage}>
-              Analisar Imagem
-            </Button>{' '}
-            {/* Remova o botão Gerar Imagem se não for necessário */}
-            <Button variant="secondary" onClick={handleGenerateImage}>
-              Gerar Imagem
-            </Button>
-          </Form>
-          {/* Adicione o componente DisplayResults aqui */}
-          <DisplayResults imageUrl={imageUrl} results={analysisResult} />
-        </Col>
-      </Row>
-    </Container>
+   
+    <div className="container">
+    <div className="row justify-content-md-center">
+      <div className="col-md-6">
+        <h1>IA VISION RECOGNIZE</h1>
+        <form>
+          <div className="mb-3">
+            <label  className="form-label">URL da Imagem ou Prompt</label>
+            <input type="text" className="form-control" id="imageInput" placeholder="Insira a URL ou o prompt da imagem"  
+            onChange={handleInputChange} />
+          </div>
+          <button type="button" className="btn btn-primary" onClick={handleAnalyzeImage}>Analisar Imagem</button>
+     
+          <button type="button" className="btn btn-secondary" onClick={handleGenerateImage}>Gerar Imagem</button>
+        </form>
+        
+        <DisplayResults imageUrl={imageUrl} results={analysisResult} />
+      </div>
+    </div>
+  </div>
+  
   );
 } 
 export default App;
