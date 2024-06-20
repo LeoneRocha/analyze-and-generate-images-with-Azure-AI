@@ -1,6 +1,6 @@
-import { AnalyzeImageResponse } from "./AnalyzeImageResponse";
+import { ImageAnalysisResult } from "./AnalyzeImageResponse";
 
 export type DisplayResultsProps = {
     imageUrl: string;
-    results: AnalyzeImageResponse | undefined;
+    results: ImageAnalysisResult | undefined;
   };

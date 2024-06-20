@@ -1,30 +1,43 @@
-import axios from 'axios'; 
-import {  apiConfigAzure } from './config';
-import { AnalyzeImageResponse } from '../types/AnalyzeImageResponse';
+import axios from 'axios';
+import { ImageAnalysisResult } from '../types/AnalyzeImageResponse';
+import { apiConfigAzure } from './config';
 
-const axiosInstance = axios.create({
-  baseURL: apiConfigAzure.endpoint,
-  headers: {
-    'Ocp-Apim-Subscription-Key': apiConfigAzure.subscriptionKey,
-    'Content-Type': 'application/json'
-  }
-});
+const endpoint = apiConfigAzure.endpoint;//'https://sherwinimage.cognitiveservices.azure.com/';
+const subscriptionKey = apiConfigAzure.subscriptionKey;// 'd43e54f05e2f43a597cb7284971f34b1';
 
-export const analyzeImage = async (imageUrl: string, features: string[]): Promise<AnalyzeImageResponse> => {
-  const params = new URLSearchParams({ 'visualFeatures': features.join(',') });
+export const analyzeImage = async (
+  imageUrl: string,
+  features: string[]
+): Promise<ImageAnalysisResult> => {
 
+  const params = {
+    features: features.join(',').toLowerCase(),
+  };
+  const baseURL = `${endpoint}/computervision/imageanalysis:analyze?api-version=2024-02-01`;
+  console.log('call analyzeImage');
+  console.log(baseURL);
   try {
-    const response = await axiosInstance.post(`/analyze?${params}`, { url: imageUrl });
-    
-    console.log( JSON.stringify(response.data, null, 2));
-
+    const response = await axios.post(
+      baseURL,
+      { url: imageUrl },
+      {
+        params: params,
+        headers: {
+          'Ocp-Apim-Subscription-Key': subscriptionKey,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.error('Error calling Azure AI Vision Image Analysis:', error.response?.data || error.message);
+      console.error(
+        'Error calling Azure AI Vision Image Analysis:',
+        error.response?.data || error.message
+      );
     } else {
       console.error('Unexpected error:', error);
     }
     throw error;
   }
-};
+};   

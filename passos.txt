@@ -27,3 +27,5 @@ Em react Typescritp ajuste o codigo abaixo para que seja possivel informar uma u
  A função deve receber como entrada a URL da imagem e retornar a resposta JSON da API
 
 Segue codigo 
+
+https://github.com/mxbb-0-1/azure_image_analysis

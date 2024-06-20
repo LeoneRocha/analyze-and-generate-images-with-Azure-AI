@@ -4,6 +4,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+npm install  
+npm install ajv
+
+
+
+
+
 rm -rf node_modules package-lock.json
 
 npm install ajv
@@ -45,3 +53,10 @@ npm install dotenv
 npm run build:staging     # Para homologação
 npm run build             # Para produção
 
+npm install react-bootstrap
+
+npm install dotenv
+npm install webpack
+npm install webpack webpack-cli webpack-dev-server
+
+npm install typescript @types/node @types/react @types/react-dom @types/jest  
