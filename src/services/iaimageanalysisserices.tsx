@@ -2,8 +2,8 @@ import axios from 'axios';
 import { ImageAnalysisResult } from '../types/AnalyzeImageResponse';
 import { apiConfigAzure } from './config';
 
-const endpoint = apiConfigAzure.endpoint;//'https://sherwinimage.cognitiveservices.azure.com/';
-const subscriptionKey = apiConfigAzure.subscriptionKey;// 'd43e54f05e2f43a597cb7284971f34b1';
+const endpoint =  'https://sherwinimage.cognitiveservices.azure.com/';
+const subscriptionKey = 'd43e54f05e2f43a597cb7284971f34b1';
 
 export const analyzeImage = async (
   imageUrl: string,
