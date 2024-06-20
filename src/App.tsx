@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { analyzeImage } from './services/iaimageanalysisserices';
 import { ImageAnalysisResult } from './types/AnalyzeImageResponse';
-import DisplayResults from './components/DisplayResults';
-import { apiConfigAzure } from './services/config';
-
-//require('dotenv').config();
-
+import DisplayResults from './components/DisplayResults'; 
+ 
 function App() { 
   const [inputValue, setInputValue] = useState('');
   const [imageUrl, setImageUrl] = useState('');
