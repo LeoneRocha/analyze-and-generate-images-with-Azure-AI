@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { ImageAnalysisResult } from '../types/AnalyzeImageResponse';
-import { apiConfigAzure } from './config';
+import { ImageAnalysisResult } from '../types/AnalyzeImageResponse'; 
 
 const endpoint =  'https://sherwinimage.cognitiveservices.azure.com/';
 const subscriptionKey = 'd43e54f05e2f43a597cb7284971f34b1';
