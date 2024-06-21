@@ -5,8 +5,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-npm install  
+
+------------------------------- PASSO A PASSO BUILD E RUN 
+
 npm install ajv
+
+npm install
+
+npm run build
+------------------------------- PASSO A PASSO BUILD E RUN 
+
+ 
 
 
 
