@@ -9,7 +9,7 @@ const DisplayResults: React.FC<DisplayResultsProps> = ({ imageUrl, results }) =>
   return (
     <div className="mb-4">
       <h2 className="mb-3">Resultados da Análise:</h2>
-      {imageUrl && <img src={imageUrl} alt="Analyzed" className="img-fluid rounded" />}
+      {imageUrl && <img src={imageUrl} alt="Analyzed" className="img-fluid rounded" title={captionResult.text} about={captionResult.text} />}
       <h3>
         <strong>Caption:</strong> {captionResult.text}
       </h3>

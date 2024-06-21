@@ -29,3 +29,15 @@ Em react Typescritp ajuste o codigo abaixo para que seja possivel informar uma u
 Segue codigo 
 
 https://github.com/mxbb-0-1/azure_image_analysis
+
+----------- PASSO 3
+
+ Em React typescript gere um código um novo metodo para chamar a API de serviço do OpenAI DALLE2 a uma função deve se chamar 'generateImage'
+  em um novo módulo separado, que você pode nomear 'AiImageGeneration.tsx'. Utilize API OpenAI.
+
+Adicione 'generateImage' como um novo módulo ao seu App.js e chame a função 'generateImage' a partir daí, de forma que a ação de geração de imagem seja acionada quando o botão 'Gerar' for pressionado. Certifique-se de manter a interface do usuário e ter um indicador de processamento enquanto a ação está sendo executada.
+
+Em seu arquivo App.js, edite a função 'DisplayResults' para exibir os resultados da chamada de API, juntamente com a URL da imagem gerada.
+
+
+https://www.freecodecamp.org/news/generate-images-using-react-and-dall-e-api-react-and-openai-api-tutorial/
